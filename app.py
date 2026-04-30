@@ -447,7 +447,7 @@ def main():
                         else:
                             st.warning("⚠️ Haz una pregunta primero")
         else:
-            st.info("⏳ Carga un documento para comenzar")S
+            st.info("⏳ Carga un documento para comenzar")
 
     st.markdown("---")
     st.markdown("""
