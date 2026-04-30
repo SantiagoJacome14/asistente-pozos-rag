@@ -1,0 +1,53 @@
+# Gitignore para Asistente de Pozos
+
+# Entorno virtual
+venv/
+env/
+ENV/
+.venv
+
+# Base de datos vectorial
+vector_db/
+*.db
+*.parquet
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Datos locales
+data/informes/*
+!data/informes/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Logs
+*.log
+logs/
+
+# Archivos temporales
+*.bak
+build/
+dist/
+*.egg-info/
+
+# Variables de entorno
+.env
+.env.local
+.env*.local
+
+# Streamlit
+.streamlit/

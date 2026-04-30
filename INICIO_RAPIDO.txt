@@ -1,0 +1,305 @@
+================================================================================
+  ASISTENTE TÉCNICO DE POZOS PETROLEROS - INICIO RÁPIDO
+  Sistema RAG para Análisis de Informes Técnicos
+================================================================================
+
+⏱️  TIEMPO TOTAL: ~5 minutos para ejecutar
+
+================================================================================
+PASO 1: INSTALAR DEPENDENCIAS (2 minutos)
+================================================================================
+
+🖥️  WINDOWS (PowerShell o CMD):
+────────────────────────────────
+
+1. Abre PowerShell como administrador
+2. Navega a la carpeta del proyecto:
+   cd C:\Users\TU_USUARIO\Downloads\asistente_pozos
+
+3. Crea entorno virtual:
+   python -m venv venv
+   (Espera ~30-60 segundos)
+
+4. Activa el entorno:
+   .\venv\Scripts\activate
+   (Verás "(venv)" al inicio de la línea)
+
+5. Instala dependencias:
+   python -m pip install -r requirements.txt
+   (Espera 2-3 minutos, descargará ~300MB)
+
+✓ Verifica que termina con "Successfully installed"
+
+---
+
+🍎  macOS / 🐧 Linux:
+────────────────────
+
+1. Abre terminal
+2. Navega a la carpeta:
+   cd ~/Downloads/asistente_pozos
+
+3. Crea entorno virtual:
+   python3 -m venv venv
+
+4. Activa el entorno:
+   source venv/bin/activate
+
+5. Instala dependencias:
+   python -m pip install -r requirements.txt
+
+✓ Verifica instalación exitosa
+
+================================================================================
+PASO 2: OBTENER API KEY DE OPENAI (1 minuto)
+================================================================================
+
+📍 VE A: https://platform.openai.com/api-keys
+
+1. Inicia sesión o crea cuenta (gratis)
+2. Haz clic en "+ Create new secret key"
+3. Copia la clave completa (empieza con "sk-")
+4. IMPORTANTE: Guárdala en un lugar seguro
+   (Solo la verás una vez)
+
+💡 NOTA: Necesitas tener crédito en tu cuenta OpenAI
+   (Prueba gratis de 3 meses al crear cuenta)
+
+================================================================================
+PASO 3: EJECUTAR LA APLICACIÓN (30 segundos)
+================================================================================
+
+1. En terminal (con (venv) activado):
+   streamlit run app.py
+
+   Si `streamlit` no se reconoce, usa:
+   python -m streamlit run app.py
+
+2. Tu navegador abrirá automáticamente
+   Si no, ve a: http://localhost:8501
+
+3. Verás la interfaz con:
+   - "Asistente técnico de pozos petroleros"
+   - Barra lateral para configuración
+   - Área de upload de documentos
+
+¡LISTO! La aplicación está corriendo ✓
+
+================================================================================
+PASO 4: USAR LA APLICACIÓN
+================================================================================
+
+1️⃣  CONFIGURAR API KEY
+   └─ En la barra lateral izquierda
+   └─ Pega tu API Key de OpenAI
+   └─ Haz clic en "✅ Validar API Key"
+   └─ Espera confirmación (5-10 segundos)
+
+2️⃣  CARGAR DOCUMENTO
+   └─ En "📁 Cargar Informe Técnico"
+   └─ Selecciona PDF, Word o Excel
+   └─ Haz clic en "🚀 Procesar Documento"
+   └─ Espera (puede tardar 1-2 minutos)
+   └─ Verás: "✅ Documento procesado exitosamente"
+
+3️⃣  HACER PREGUNTAS
+   └─ En "💬 Haz tu Pregunta"
+   └─ Escribe cualquier pregunta sobre el documento
+   └─ Ejemplos:
+      • "¿Cuál es la profundidad total?"
+      • "¿Cuáles son los problemas?"
+      • "Resume el estado del pozo"
+   └─ Haz clic "🔍 Buscar"
+   └─ Espera respuesta (10-15 segundos)
+
+4️⃣  VER RESPUESTAS
+   └─ Verás: Respuesta + Confianza + Fuentes
+   └─ Expande "📚 Fuentes utilizadas"
+   └─ Para ver fragmentos del documento
+
+5️⃣  HERRAMIENTAS AVANZADAS
+   └─ Expande "🔧 Herramientas Avanzadas"
+   └─ "📋 Resumir Documento" → Resumen auto
+   └─ "🎯 Extraer Puntos Clave" → Top 5 puntos
+
+================================================================================
+PARAR LA APLICACIÓN
+================================================================================
+
+Presiona en la terminal: Ctrl + C (Windows/macOS/Linux)
+O cierra la pestaña del navegador
+
+================================================================================
+DOCUMENTOS DE PRUEBA
+================================================================================
+
+Si no tienes un documento para probar:
+
+1. Crea un PDF con contenido técnico
+2. O descarga uno en línea (búsqueda: "pozo petrolero informe PDF")
+3. Guárdalo en la carpeta: data/informes/
+
+NOTA: El primer documento tardará 2-3 minutos
+(Las preguntas siguientes ~10-15 segundos)
+
+================================================================================
+ESTRUCTURA DE ARCHIVOS GENERADOS
+================================================================================
+
+asistente_pozos/
+├── app.py                    ← Aplicación principal
+├── requirements.txt          ← Dependencias
+├── config.py                 ← Configuración
+├── README.md                 ← Guía completa (LEE ESTO)
+├── ARQUITECTURA.py           ← Documentación técnica
+├── SUMARIO.py                ← Resumen del proyecto
+│
+├── utils/
+│   ├── document_loader.py   ← Carga de documentos
+│   ├── text_processor.py    ← Procesa texto
+│   ├── vector_store.py      ← Base vectorial
+│   └── qa_system.py         ← Sistema RAG
+│
+├── data/informes/           ← Tu carpeta de documentos
+├── vector_db/               ← Base de datos (autogenerada)
+│
+└── install.bat / install.sh ← Scripts de instalación alt.
+
+================================================================================
+SOLUCIÓN RÁPIDA DE PROBLEMAS
+================================================================================
+
+❌ "Python no reconocido"
+✅ Reinstala Python desde python.org, marca "Add to PATH"
+
+❌ "pip: command not found"
+✅ En Windows: python -m pip install -r requirements.txt
+✅ En Mac/Linux: pip3 install -r requirements.txt
+
+❌ "venv command not found"
+✅ En Windows: python -m venv venv
+✅ En Mac/Linux: python3 -m venv venv
+
+❌ "API Key inválida"
+✅ Verifica en https://platform.openai.com/api-keys
+✅ Debe empezar con "sk-"
+✅ Tienes créditos disponibles?
+
+❌ "Módulo no encontrado"
+✅ Verifica que (venv) está activado
+✅ pip install -r requirements.txt --force-reinstall
+
+❌ "Archivo corrupto"
+✅ Prueba con otro PDF
+✅ Verifica que se abre en Adobe/Word
+
+Para más ayuda, lee README.md
+
+================================================================================
+ARQUITECTURA EN 30 SEGUNDOS
+================================================================================
+
+1. CARGAS DOCUMENTO
+   ↓
+2. SE EXTRAE TEXTO
+   ↓
+3. SE DIVIDE EN CHUNKS
+   ↓
+4. SE GENERAN EMBEDDINGS (vectores)
+   ↓
+5. SE GUARDAN EN CHROMADB
+   ↓
+6. CUANDO HACES PREGUNTA:
+   - Se convierte a vector
+   - Se buscan chunks similares
+   - Se envía a GPT-3.5 con contexto
+   - Retorna respuesta + fuentes
+
+TODO LOCAL (excepto OpenAI API)
+
+================================================================================
+TECNOLOGÍAS UTILIZADAS
+================================================================================
+
+Frontend:     Streamlit (interfaz web interactiva)
+Backend:      Python puro
+Embeddings:   OpenAI API (text-embedding-3-small)
+LLM:          OpenAI (gpt-3.5-turbo)
+Vector DB:    ChromaDB (local, persistente)
+Documentos:   PyPDF2, python-docx, openpyxl
+
+================================================================================
+COSTOS ESTIMADOS
+================================================================================
+
+OpenAI API:
+- Embeddings: ~$0.02 por 1M tokens
+- Chat: ~$0.0005 por 1K tokens (entrada)
+
+Ejemplo:
+- 100 documentos: ~$1-3
+- 100 preguntas: ~$0.10-0.50
+- Total 100+100: ~$2-5
+
+================================================================================
+DIFERENCIA: LOCAL vs CLOUD
+================================================================================
+
+LOCAL (Este proyecto):
+✓ Rápido (búsqueda < 1 segundo)
+✓ Privado (tus datos en tu PC)
+✓ Barato (solo pagas OpenAI)
+✗ No escalable a múltiples usuarios
+
+CLOUD (Producción):
+✗ Más lento (latencia de red)
+✓ Privado con encriptación
+✓ Muy escalable
+✗ Más caro
+
+================================================================================
+PRÓXIMOS PASOS
+================================================================================
+
+INMEDIATO:
+1. Sigue los pasos 1-4 de arriba
+2. Prueba con un documento
+
+DESPUÉS:
+1. Lee README.md completo
+2. Experimenta con diferentes preguntas
+3. Ajusta config.py si lo necesitas
+4. Revisa ARQUITECTURA.py para entender internals
+
+PRODUCCIÓN:
+1. Crea Backend con FastAPI
+2. Conecta Base de Datos SQL
+3. Añade Autenticación
+4. Deploya a Heroku/AWS/Render
+
+================================================================================
+RECURSOS ÚTILES
+================================================================================
+
+Documentación:
+- OpenAI: https://platform.openai.com/docs
+- Streamlit: https://docs.streamlit.io
+- ChromaDB: https://docs.trychroma.com
+
+GitHub:
+- LangChain: https://github.com/langchain-ai/langchain
+- LlamaIndex: https://github.com/run-llama/llama_index
+
+Tutoriales:
+- RAG con LlamaIndex: https://docs.llamaindex.ai
+- Vector Databases: YouTube "Vector Database"
+
+================================================================================
+¡DISFRUTA! 🛢️ ⚡
+================================================================================
+
+§ Cualquier pregunta → consulta README.md
+§ Errores técnicos → revisa terminal para logs
+§ Mejoras sugeridas → edita config.py
+
+¡A ANALIZAR POZOS!

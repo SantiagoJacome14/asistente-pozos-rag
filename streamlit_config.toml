@@ -1,0 +1,25 @@
+# Configuración de Streamlit para Asistente de Pozos
+# Ubicar en: ~/.streamlit/config.toml o /home/user/.streamlit/config.toml
+
+[theme]
+primaryColor = "#1f77d4"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f0f2f6"
+textColor = "#31333F"
+font = "sans serif"
+
+[client]
+showErrorDetails = true
+toolbarMode = "developer"
+
+[logger]
+level = "info"
+
+[server]
+port = 8501
+headless = true
+runOnSave = true
+maxUploadSize = 200
+
+[client]
+toolbarMode = "viewer"
